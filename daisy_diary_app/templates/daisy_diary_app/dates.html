@@ -1,0 +1,18 @@
+{% extends 'daisy_diary_app/base.html' %}
+
+{% block content %}
+
+  <p>Dates</p>
+  <ul>
+    {% for date in dates %}
+      <li>
+        <a href="{% url 'daisy_diary_app:date' date.id %}">
+        {{ date.text }}</a>
+      </li>
+    {% empty %}
+      <li>No Dates have been added yet!</li>
+    {% endfor %}
+  </ul>
+
+{% endblock content %}
+
